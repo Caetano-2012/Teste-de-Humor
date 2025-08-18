@@ -52,6 +52,23 @@
             <br><br>
             <button class="btn btn-primary" onclick="takeSnapshot()">Capturar Imagem</button>
         </div>
+
+        <div>
+            <label>Previsão 1: </label>
+            <p class="emotionName" id="resultEmotionName"></p>
+            <p class="emoji" id="updateEmoji"></p>
+
+            <label>Previsão 2: </label>
+            <p class="emotionName" id="resultEmotionName2"></p>
+            <p class="emoji" id="updateEmoji2"></p>
+        </div>
+
+        <div>
+            <label>Foto: </label>
+            <div id="result"></div>
+            <br><br>
+            <button class="btn btn-success" onclick="check();">Prever Emoção</button>
+        </div>
     </div>
 
     <script src="main.js"></script>
