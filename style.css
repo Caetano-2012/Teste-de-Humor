@@ -1,0 +1,38 @@
+body{
+    color: grey;
+    background-color: wheat;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+}
+
+span{
+    font-size: 30px;
+}
+
+#result, #camera{
+    border: 4px dashed rgb(94, 91, 91);
+    border-radius: 10px;
+    width: 370px !important;
+    height: 280px !important;
+    padding: auto;
+    margin: auto;
+}
+
+#resultEmotionName, #resultEmotionName2{
+    color: rgb(94, 91, 91);
+}
+
+.emotionName{
+    font-size: 40px;
+}
