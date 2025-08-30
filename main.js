@@ -18,4 +18,9 @@ function takeSnapshot() {
 
 console.log("versão ml5:", ml5.version);
 
-classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/gPgiwYmvR/.json",modelLoaded)
+ ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/gPgiwYmvR/model.json",)
+    .then(model =>{
+        classifier = model;
+        console.log('Model Loaded');
+    })
+    .catch(err => console.error('Erro ao carregar o modelo:', err));
