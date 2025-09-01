@@ -29,4 +29,32 @@ console.log("versão ml5:", ml5.version);
         let synth = window.speechSynthesis;
         let speakData1 = "A primeira previsão é " + prediction1;
         let speakData2 = "E a segunda previsão é " + prediction2; 
+        let utterThis = new SpeechSynthesisUtterance(speakData1 + speakData2);
+        synth.speak(utterThis);
+    }
+
+    function check() {
+        img = document.getElementById("capturedImage");
+        if(!classifier) {
+            console.error("O modelo ainda não foi carregado!");
+            return;
+        }
+        classifier.classify(img)
+        .then(results => {
+                console.log(results);
+                document.getElementById("resultEmotionName").innerHTML = results[0].label;
+                document.getElementById("resultEmotionName2").innerHTML = results[1].label; 
+                prediction1 = results[0].label;
+                prediction2 = results[1].label;
+                speak();
+                if (results[0].label === "feliz") {
+                    document.getElementsById("updateEmoji").innerHTML = "&#128522;";
+                }
+                if (results[0].label === "triste") {
+                    document.getElementsById("updateEmoji").innerHTML = "&#128532;";
+                }
+                if (results[0].label === "irritado") {
+                    document.getElementsById("updateEmoji").innerHTML = "&#128548;";
+                }
+            })
     }
