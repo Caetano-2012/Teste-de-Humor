@@ -48,13 +48,23 @@ console.log("versão ml5:", ml5.version);
                 prediction2 = results[1].label;
                 speak();
                 if (results[0].label === "feliz") {
-                    document.getElementsById("updateEmoji").innerHTML = "&#128522;";
+                    document.getElementById("updateEmoji").innerHTML = "&#128522;";
                 }
                 if (results[0].label === "triste") {
-                    document.getElementsById("updateEmoji").innerHTML = "&#128532;";
+                    document.getElementById("updateEmoji").innerHTML = "&#128532;";
                 }
                 if (results[0].label === "irritado") {
-                    document.getElementsById("updateEmoji").innerHTML = "&#128548;";
+                    document.getElementById("updateEmoji").innerHTML = "&#128548;";
+                }
+                if (results[1].label === "feliz") {
+                    document.getElementById("updateEmoji2").innerHTML = "&#128522;";
+                }
+                if (results[1].label === "triste") {
+                    document.getElementById("updateEmoji2").innerHTML = "&#128532;";
+                }
+                if (results[1].label === "irritado") {
+                    document.getElementById("updateEmoji2").innerHTML = "&#128548;";
                 }
             })
+        .catch(err => console.error(err))    
     }
